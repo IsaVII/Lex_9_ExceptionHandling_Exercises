@@ -13,8 +13,8 @@ public class Main {
             b = Integer.parseInt(IO.readln("Enter a number to divide by zero: "));
             try {
                 dividebyZero();
-            } catch (Exception_DivideZero e) {
-                e.handle();
+            } catch (Exception e) {
+                ExceptionHandler.handle(e);
             } finally {
                 IO.println("Attempt finished.");
             }
