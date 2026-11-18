@@ -6,15 +6,50 @@ public class Main {
     int b = 0;
 
     void main() {
+        Exercise_2();
+    }
 
+
+    void Exercise_2(){
+        // Exercise 2: Exception Handling with User Input
+        int min = 1;
+        int max = 100;
+        int userInput = getUserInputInRange(min, max);
+        IO.println("You entered: " + userInput);
+    }
+
+
+
+
+    void Exercise_1(){
         // Exercise 1: Basic Exception Handling
-       a = getUserInput();
-       b = getUserInput();
+        a = getUserInput();
+        b = getUserInput();
         try {
             int c = a / b;
             IO.println("Result: " + c);
         } catch (ArithmeticException e) {
             ExceptionHandler.handle(e);
+        }
+    }
+    
+    
+
+
+    int getUserInputInRange(int min, int max) {
+        while (true) {
+            String input = IO.readln("Enter a number between " + min + " and " + max + ": ");
+            try {
+                int number = Integer.parseInt(input);
+                if (number < min || number > max) {
+                    throw new IllegalArgumentException("Number out of range: " + number);
+                }
+                return number;
+            } catch (NumberFormatException e) {
+                ExceptionHandler.handle(e);
+            } catch (IllegalArgumentException e) {
+                ExceptionHandler.handle(e);
+            }
         }
     }
 
