@@ -6,7 +6,7 @@ public class Main {
     int b = 0;
 
     void main() {
-        Exercise_2();
+        Exercise_1();
     }
 
 
@@ -30,6 +30,9 @@ public class Main {
             IO.println("Result: " + c);
         } catch (ArithmeticException e) {
             ExceptionHandler.handle(e);
+        }
+        finally {
+            IO.println("End of Exercise 1");
         }
     }
     
