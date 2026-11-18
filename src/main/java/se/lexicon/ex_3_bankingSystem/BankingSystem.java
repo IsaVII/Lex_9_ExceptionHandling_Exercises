@@ -5,7 +5,7 @@ import se.lexicon.exceptions.InsufficientBalanceException;
 
 public class BankingSystem {
 
-    void main(String[] args) {
+    void main() {
         BankAccount account = new BankAccount(100);
 
         account.deposit(50);
